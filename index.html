@@ -86,6 +86,7 @@
     .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.2); }
     .badge-gray { background: rgba(148, 163, 184, 0.1); color: var(--muted); border: 1px solid rgba(148, 163, 184, 0.2); }
     .badge-green { background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.2); }
+    .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
 
     .card-info h3 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; font-weight: 800; }
     .card-info .subtitle { display: block; font-size: 0.85rem; color: var(--primary); margin-bottom: 1.2rem; font-family: 'JetBrains Mono', monospace; }
@@ -115,12 +116,7 @@
       .card-visual { order: -1; }
     }
     
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
+    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
     footer { text-align: center; padding: 4rem 2rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--glass-border); margin-top: 4rem; }
   </style>
 </head>
@@ -132,15 +128,9 @@
       <h1><span>Desenvolvedor Backend</span>Douglas Henrique</h1>
       <p>Desenvolvedor focado no ecossistema .NET, com experiência em sistemas de produção e soluções integradas de hardware.</p>
       <div class="btn-group">
-        <a href="https://github.com/henriquedgs76" target="_blank" class="btn btn-secondary">
-          💻 GitHub
-        </a>
-        <a href="https://linkedin.com/in/douglashenrique76" target="_blank" class="btn btn-secondary">
-          🔗 LinkedIn
-        </a>
-        <a href="curriculo2026.pdf" download="Curriculo_Douglas_Henrique.pdf" class="btn btn-secondary" style="border-color: var(--primary);">
-          📥 Baixar CV
-        </a>
+        <a href="https://github.com/henriquedgs76" target="_blank" class="btn btn-secondary">💻 GitHub</a>
+        <a href="https://linkedin.com/in/douglashenrique76" target="_blank" class="btn btn-secondary">🔗 LinkedIn</a>
+        <a href="curriculo2026.pdf" download="Curriculo_Douglas_Henrique.pdf" class="btn btn-secondary" style="border-color: var(--primary);">📥 Baixar CV</a>
       </div>
     </div>
   </header>
@@ -213,13 +203,31 @@
           <span class="badge badge-blue">Integração de Hardware</span>
           <h3>Hikvision ANPR Suite</h3>
           <span class="subtitle">.NET 8 | SignalR | ISAPI</span>
-          <p>Sistema de integração para câmeras inteligentes e dispositivos de segurança, processando e exibindo eventos de monitoramento em tempo real.</p>
+          <p>Sistema de integração para câmeras inteligentes, processando eventos de monitoramento em tempo real.</p>
           <ul class="list">
-            <li>Comunicação direta com o hardware via protocolo de rede (ISAPI).</li>
-            <li>Notificações instantâneas na tela sem precisar atualizar a página (SignalR).</li>
-            <li>Criação de simulador de eventos para validação de fluxos técnicos.</li>
+            <li>Comunicação via protocolo ISAPI e Webhooks.</li>
+            <li>Notificações em tempo real com SignalR.</li>
+            <li>Simulador de eventos para validação de fluxos técnicos.</li>
           </ul>
           <a href="https://github.com/henriquedgs76/Hikvision-ANPR-Suite" target="_blank" class="btn btn-secondary">Ver Código</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Barbearia Vila Lemos">
+        </div>
+        <div class="card-info">
+          <span class="badge badge-purple">Projeto Comercial</span>
+          <h3>Barbearia Vila Lemos</h3>
+          <span class="subtitle">HTML5 | CSS3 | JavaScript</span>
+          <p>Website institucional focado em experiência do cliente e conversão para agendamentos.</p>
+          <ul class="list">
+            <li>Design totalmente responsivo para dispositivos móveis.</li>
+            <li>Integração direta com API do WhatsApp para agendamentos.</li>
+            <li>Localização integrada via Google Maps API.</li>
+          </ul>
+          <a href="https://barbearia-vila-lemos.vercel.app/" target="_blank" class="btn btn-secondary">Ver Site</a>
         </div>
       </div>
     </div>
@@ -233,7 +241,7 @@
       </div>
       <div class="box">
         <h4>Maturidade Profissional</h4>
-        <p>8 anos de experiência em gestão e atendimento, trazendo responsabilidade e visão de dono para o desenvolvimento.</p>
+        <p>8 anos de experiência em gestão, trazendo responsabilidade e visão de negócio para o código.</p>
       </div>
       <div class="box">
         <h4>Stack Principal</h4>
@@ -246,37 +254,20 @@
     <h2>Contato</h2>
     <div class="card" style="display: block; text-align: center;">
       <div style="max-width: 600px; margin: 0 auto;">
-        <p style="margin-bottom: 2rem; color: var(--muted);">
-          Tem um projeto em mente ou uma proposta? Envie uma mensagem ou me chame diretamente.
-        </p>
-
         <form action="https://formspree.io/f/xwvojoya" method="POST" class="contact-form">
-          <div class="input-group" style="margin-bottom: 1rem;">
-            <input type="text" name="name" placeholder="Seu Nome" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
-          </div>
-          <div class="input-group" style="margin-bottom: 1rem;">
-            <input type="email" name="email" placeholder="Seu E-mail" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
-          </div>
-          <div class="input-group" style="margin-bottom: 1.5rem;">
-            <textarea name="message" rows="4" placeholder="Como posso ajudar?" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text); resize: vertical;"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 2rem;">Enviar E-mail</button>
+          <input type="text" name="name" placeholder="Seu Nome" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
+          <input type="email" name="email" placeholder="Seu E-mail" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
+          <textarea name="message" rows="4" placeholder="Como posso ajudar?" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text); resize: vertical;"></textarea>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar E-mail</button>
         </form>
-
-        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 2rem; opacity: 0.5;">
+        <div style="margin: 2rem 0; opacity: 0.5; display: flex; align-items: center; gap: 15px;">
           <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
           <span style="font-size: 0.8rem; font-family: 'JetBrains Mono';">OU</span>
           <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
         </div>
-
-        <div class="btn-group">
-          <a href="https://wa.me/5519992896532?text=Olá%20Douglas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20seus%20projetos!" 
-             target="_blank" 
-             class="btn btn-secondary" 
-             style="border-color: #25d36644; width: 100%;">
-            <span style="color: #22c55e;">📞</span> Meu WhatsApp
-          </a>
-        </div>
+        <a href="https://wa.me/5519992896532" target="_blank" class="btn btn-secondary" style="width: 100%; border-color: #25d36644;">
+          <span style="color: #22c55e;">📞</span> Chamar no WhatsApp
+        </a>
       </div>
     </div>
   </section>
