@@ -35,7 +35,7 @@
       z-index: -1;
     }
 
-    header { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+    header { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; }
     .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; letter-spacing: -0.05em; margin-bottom: 1.5rem; }
     .hero h1 span { color: var(--primary); display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.35em; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 12px; }
     .hero p { max-width: 750px; margin: 0 auto 2.5rem; font-size: 1.25rem; color: var(--muted); font-weight: 300; }
@@ -53,8 +53,9 @@
       gap: 10px;
       font-size: 0.95rem;
       border: 1px solid transparent;
+      cursor: pointer;
     }
-    .btn-primary { background: var(--primary); color: #020617; }
+    .btn-primary { background: var(--primary); color: #020617; border: none; }
     .btn-secondary {
       border: 1px solid var(--glass-border);
       color: var(--text);
@@ -65,6 +66,34 @@
       transform: translateY(-5px);
       box-shadow: 0 15px 30px -10px rgba(56, 189, 248, 0.4);
       border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    /* Botão Fizzy Adaptado */
+    .btn-fizzy {
+      position: relative;
+      overflow: hidden;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      z-index: 1;
+    }
+    .btn-fizzy:hover { color: #020617; background: var(--primary); }
+    .btn-fizzy .icon-arrow { transition: transform 0.3s ease; }
+    .btn-fizzy:hover .icon-arrow { transform: translateX(5px); }
+    .btn-fizzy::before, .btn-fizzy::after {
+      content: ""; position: absolute; width: 10px; height: 10px; background: var(--primary);
+      border-radius: 50%; opacity: 0; z-index: -1;
+    }
+    .btn-fizzy:hover::before { animation: fizzy-top 0.6s forwards; top: 50%; left: 20%; }
+    .btn-fizzy:hover::after { animation: fizzy-bottom 0.6s forwards; bottom: 50%; right: 20%; }
+
+    @keyframes fizzy-top {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(-30px, -50px) scale(0); opacity: 0; }
+    }
+    @keyframes fizzy-bottom {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(30px, 50px) scale(0); opacity: 0; }
     }
 
     section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
@@ -96,13 +125,7 @@
     .list li { margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px; color: var(--text); }
     .list li::before { content: "→"; color: var(--primary); font-weight: bold; }
 
-    .card-visual {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid var(--glass-border);
-    }
+    .card-visual { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 16px; border: 1px solid var(--glass-border); }
     .card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .card:hover .card-visual img { transform: scale(1.05); }
 
@@ -126,11 +149,13 @@
   <header>
     <div class="hero">
       <h1><span>Desenvolvedor Backend</span>Douglas Henrique</h1>
-      <p>Desenvolvedor focado no ecossistema .NET, com experiência em sistemas de produção e soluções integradas de hardware.</p>
+      <p>Focado no ecossistema .NET, com experiência em sistemas de produção, integrações de hardware e otimização de fluxos de negócio.</p>
       <div class="btn-group">
         <a href="https://github.com/henriquedgs76" target="_blank" class="btn btn-secondary">💻 GitHub</a>
         <a href="https://linkedin.com/in/douglashenrique76" target="_blank" class="btn btn-secondary">🔗 LinkedIn</a>
-        <a href="curriculo2026.pdf" download="Curriculo_Douglas_Henrique.pdf" class="btn btn-secondary" style="border-color: var(--primary);">📥 Baixar CV</a>
+        <a href="curriculo2026.pdf" download="Curriculo_Douglas_Henrique.pdf" class="btn btn-fizzy">
+          📥 Baixar CV <span class="icon-arrow">→</span>
+        </a>
       </div>
     </div>
   </header>
@@ -143,11 +168,11 @@
           <span class="badge badge-blue">Produção Ativa</span>
           <h3>Carmob</h3>
           <span class="subtitle">Desenvolvedor Backend Júnior | Nov 2025 – Presente</span>
-          <p>Atuação na manutenção e evolução de APIs utilizando ASP.NET Core e C#.</p>
+          <p>Manutenção e evolução de APIs robustas utilizando ASP.NET Core e C#.</p>
           <ul class="list">
-            <li>Manutenção de endpoints e correção de bugs em ambiente de produção.</li>
-            <li>Otimização de consultas SQL para melhoria de tempo de resposta.</li>
-            <li>Implementação de novas funcionalidades baseadas em regras de negócio.</li>
+            <li>Manutenção de endpoints críticos e correção de bugs em produção.</li>
+            <li>Otimização de consultas SQL para alta performance de resposta.</li>
+            <li>Implementação de lógicas complexas baseadas em regras de negócio.</li>
           </ul>
         </div>
         <div class="card-visual">
@@ -160,15 +185,15 @@
           <span class="badge badge-gray">Infraestrutura</span>
           <h3>Prefeitura de Campinas</h3>
           <span class="subtitle">Estagiário de Suporte Técnico | Ago 2024 – Jul 2025</span>
-          <p>Suporte técnico especializado em hardware, software e redes locais.</p>
+          <p>Suporte técnico especializado focado em infraestrutura de TI e redes.</p>
           <ul class="list">
-            <li>Diagnóstico e resolução de incidentes em infraestrutura de TI.</li>
-            <li>Apoio na configuração de redes e novos equipamentos.</li>
-            <li>Atendimento direto ao usuário final com foco em resolução ágil.</li>
+            <li>Diagnóstico de hardware e configuração de redes locais.</li>
+            <li>Apoio na implementação de novos ativos de rede.</li>
+            <li>Resolução ágil de incidentes para usuários finais.</li>
           </ul>
         </div>
         <div class="card-visual">
-          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="Data Center e Redes">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" alt="Data Center">
         </div>
       </div>
     </div>
@@ -179,35 +204,35 @@
     <div class="stack">
       <div class="card">
         <div class="card-visual">
-          <img src="imgs/dashboard.png" alt="Sistema Automotivo">
+          <img src="imgs/dashboard.png" alt="Estacionamento Dashboard">
         </div>
         <div class="card-info">
           <span class="badge badge-green">Produto Comercial</span>
           <h3>Estacionamento & Lava Rápido</h3>
-          <span class="subtitle">C# | SQL Server | ASP.NET</span>
-          <p>Software de gestão vendido e implementado para uso real, automatizando o fluxo financeiro e operacional.</p>
+          <span class="subtitle">C# | SQL Server | ASP.NET Core</span>
+          <p>Software de gestão comercial completo, controlando o fluxo financeiro e operacional de ponta a ponta.</p>
           <ul class="list">
-            <li>Controle de caixa e fluxo de clientes em tempo real.</li>
-            <li>Lógica de tarifação personalizada e relatórios de fechamento.</li>
-            <li>Sistema em produção, garantindo a operação diária do cliente.</li>
+            <li>Controle de caixa e tarifação dinâmica automatizada.</li>
+            <li>Geração de relatórios financeiros detalhados.</li>
+            <li>Sistema validado e em uso diário por clientes reais.</li>
           </ul>
-          <a href="http://henriquedgs76-001-site1.jtempurl.com/" target="_blank" class="btn btn-secondary">Entrar no Sistema</a>
+          <a href="http://henriquedgs76-001-site1.jtempurl.com/" target="_blank" class="btn btn-secondary">Acessar Demo</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-visual">
-          <img src="imgs/hikvision-suite.png" alt="Sistema de Monitoramento">
+          <img src="imgs/hikvision-suite.png" alt="Hikvision Suite">
         </div>
         <div class="card-info">
           <span class="badge badge-blue">Integração de Hardware</span>
           <h3>Hikvision ANPR Suite</h3>
           <span class="subtitle">.NET 8 | SignalR | ISAPI</span>
-          <p>Sistema de integração para câmeras inteligentes, processando eventos de monitoramento em tempo real.</p>
+          <p>Integração Backend com dispositivos de leitura de placa, processando eventos em tempo real.</p>
           <ul class="list">
-            <li>Comunicação via protocolo ISAPI e Webhooks.</li>
-            <li>Notificações em tempo real com SignalR.</li>
-            <li>Simulador de eventos para validação de fluxos técnicos.</li>
+            <li>Comunicação via Webhooks e protocolo ISAPI.</li>
+            <li>Notificações instantâneas utilizando SignalR.</li>
+            <li>Arquitetura preparada para múltiplos dispositivos simultâneos.</li>
           </ul>
           <a href="https://github.com/henriquedgs76/Hikvision-ANPR-Suite" target="_blank" class="btn btn-secondary">Ver Código</a>
         </div>
@@ -218,16 +243,16 @@
           <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Barbearia Vila Lemos">
         </div>
         <div class="card-info">
-          <span class="badge badge-purple">Projeto Comercial</span>
+          <span class="badge badge-purple">Web Institucional</span>
           <h3>Barbearia Vila Lemos</h3>
           <span class="subtitle">HTML5 | CSS3 | JavaScript</span>
-          <p>Website institucional focado em experiência do cliente e conversão para agendamentos.</p>
+          <p>Interface focada em conversão de agendamentos e experiência mobile-first.</p>
           <ul class="list">
-            <li>Design totalmente responsivo para dispositivos móveis.</li>
-            <li>Integração direta com API do WhatsApp para agendamentos.</li>
-            <li>Localização integrada via Google Maps API.</li>
+            <li>Design responsivo e clean voltado ao usuário.</li>
+            <li>Integração com API do WhatsApp para agendamentos rápidos.</li>
+            <li>Aplicação de conceitos modernos de UI/UX.</li>
           </ul>
-          <a href="https://barbearia-vila-lemos.vercel.app/" target="_blank" class="btn btn-secondary">Ver Site</a>
+          <a href="https://barbearia-vila-lemos.vercel.app/" target="_blank" class="btn btn-secondary">Visitar Site</a>
         </div>
       </div>
     </div>
@@ -237,15 +262,15 @@
     <div class="grid-info">
       <div class="box">
         <h4>Acadêmico</h4>
-        <p><strong>ADS — Em Graduação</strong><br>Anhanguera Campinas<br>Conclusão: Julho/2026</p>
+        <p><strong>ADS — Em Graduação</strong><br>Anhanguera Campinas<br>Formatura: Julho/2026</p>
       </div>
       <div class="box">
-        <h4>Maturidade Profissional</h4>
-        <p>8 anos de experiência em gestão, trazendo responsabilidade e visão de negócio para o código.</p>
+        <h4>Soft Skills</h4>
+        <p>8 anos de bagagem em gestão e atendimento, garantindo maturidade profissional e foco em prazos.</p>
       </div>
       <div class="box">
         <h4>Stack Principal</h4>
-        <p>C#, .NET Core, SQL Server, MySQL, EF Core e JavaScript.</p>
+        <p>C#, .NET Core, SQL Server, MySQL, EF Core e Integrações REST.</p>
       </div>
     </div>
   </section>
@@ -255,16 +280,19 @@
     <div class="card" style="display: block; text-align: center;">
       <div style="max-width: 600px; margin: 0 auto;">
         <form action="https://formspree.io/f/xwvojoya" method="POST" class="contact-form">
+          <input type="text" name="_gotcha" style="display:none">
           <input type="text" name="name" placeholder="Seu Nome" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
           <input type="email" name="email" placeholder="Seu E-mail" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
           <textarea name="message" rows="4" placeholder="Como posso ajudar?" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text); resize: vertical;"></textarea>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar E-mail</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
         </form>
+
         <div style="margin: 2rem 0; opacity: 0.5; display: flex; align-items: center; gap: 15px;">
           <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
           <span style="font-size: 0.8rem; font-family: 'JetBrains Mono';">OU</span>
           <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
         </div>
+
         <a href="https://wa.me/5519992896532" target="_blank" class="btn btn-secondary" style="width: 100%; border-color: #25d36644;">
           <span style="color: #22c55e;">📞</span> Chamar no WhatsApp
         </a>
@@ -274,7 +302,7 @@
 
   <footer>
     <p>DOUGLAS HENRIQUE — CAMPINAS/SP</p>
-    <p style="margin-top: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; opacity: 0.5;">Foco em Resolução de Problemas e Entrega de Valor</p>
+    <p style="margin-top: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; opacity: 0.5;">Foco em Clean Code e Resolução de Problemas</p>
   </footer>
 </body>
 </html>
