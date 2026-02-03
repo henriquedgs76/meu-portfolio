@@ -84,7 +84,7 @@ header { min-height: 60vh; display: flex; align-items: center; justify-content: 
   border-color: rgba(56, 189, 248, 0.4);
 }
 
-/* Estilização das Boxes (Stack e Sobre) */
+/* Estilização Stack e Sobre */
 .box {
   background: var(--glass);
   border: 1px solid var(--glass-border);
@@ -122,7 +122,7 @@ header { min-height: 60vh; display: flex; align-items: center; justify-content: 
   letter-spacing: 0.1rem;
 }
 
-/* Botão Fizzy (Currículo) */
+/* Botão Currículo */
 .btn-fizzy {
   position: relative;
   overflow: hidden;

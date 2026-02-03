@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Configuração do ScrollReveal
+    // Configuração do ScrollReveal
     const sr = ScrollReveal({
         distance: '60px',
         duration: 1000,
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         reset: false 
     });
 
-    // Animação dos Cards: Zigue-zague (Esquerda/Direita)
+    // Animação  Zigue-zague para os cards de Projetos
     sr.reveal('.card:nth-child(odd)', { origin: 'left', distance: '100px' });
     sr.reveal('.card:nth-child(even)', { origin: 'right', distance: '100px' });
 
-    // Animação em Cascata para as boxes de Tecnologias e Sobre
+    // Animação para as boxes de Tecnologias e Sobre
     sr.reveal('.box', { 
         interval: 150, 
         origin: 'bottom', 
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sr.reveal('.contact-card', { origin: 'bottom', scale: 0.9, delay: 300 });
     sr.reveal('footer', { origin: 'bottom', distance: '20px', delay: 500 });
 
-    // 2. Efeito de Digitação (Typing Effect)
+    // Efeito de Digitação 
     const textElement = document.getElementById('typing-text');
     
-    // Só executa se o elemento existir na página
+    
     if (textElement) {
-        const phrases = ["Douglas Henrique", "Desenvolvedor FullStack", "Especialista .NET"];
+        const phrases = ["Douglas Henrique", "Desenvolvedor FullStack"];
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
