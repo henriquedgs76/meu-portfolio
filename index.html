@@ -3,162 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Douglas Henrique | Desenvolvedor Backend</title>
-  
-  <meta name="description" content="Portfólio de Douglas Henrique, Desenvolvedor Backend especializado em .NET, C# e APIs. Experiência com sistemas reais em produção e integração de hardware.">
-  <meta name="keywords" content="Douglas Henrique, Desenvolvedor Backend, .NET, C#, Campinas, Desenvolvedor Júnior, SQL Server, Hikvision ISAPI">
-  <meta name="author" content="Douglas Henrique">
 
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/imgs/favicon-16x16.png">
+<link rel="shortcut icon" href="assets/imgs/favicon.ico">
+<link rel="manifest" href="assets/imgs/site.webmanifest">
+<meta name="msapplication-TileColor" content="#1a2a6c">
+<meta name="theme-color" content="#1a2a6c">
+<link rel="mask-icon" href="assets/imgs/safari-pinned-tab.svg" color="#1a2a6c">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Douglas Henrique | Desenvolvedor FullStack</title>
+  
+  <meta name="description" content="Portfólio de Douglas Henrique, Desenvolvedor FullStack especializado em .NET, C# e APIs. Experiência com sistemas reais e integração de hardware.">
+  <meta name="keywords" content="Douglas Henrique, Desenvolvedor Backend, .NET, C#, Campinas, SQL Server, Hikvision ISAPI">
+  <meta name="author" content="Douglas Henrique">
 
-  <style>
-    :root {
-      --bg: #020617;
-      --glass: rgba(15, 23, 42, 0.7);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --primary: #38bdf8;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --success: #22c55e;
-      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-    
-    .bg-blur {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 15% 15%, #0c4a6e40 0%, transparent 35%),
-                  radial-gradient(circle at 85% 85%, #082f4940 0%, transparent 35%);
-      z-index: -1;
-    }
-
-    header { min-height: 60vh; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; text-align: center; }
-    .hero h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; letter-spacing: -0.05em; margin-bottom: 1.5rem; }
-    .hero h1 span { color: var(--primary); display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.35em; text-transform: uppercase; letter-spacing: 0.4em; margin-bottom: 12px; }
-    .hero p { max-width: 750px; margin: 0 auto 2.5rem; font-size: 1.25rem; color: var(--muted); font-weight: 300; }
-
-    .btn-group { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      padding: 0.8rem 2.2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 0.95rem;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-    .btn-primary { background: var(--primary); color: #020617; border: none; }
-    .btn-secondary {
-      border: 1px solid var(--glass-border);
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-    }
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px -10px rgba(56, 189, 248, 0.4);
-      border-color: rgba(56, 189, 248, 0.4);
-    }
-
-    /* Botão Fizzy Adaptado */
-    .btn-fizzy {
-      position: relative;
-      overflow: hidden;
-      background: rgba(56, 189, 248, 0.1);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      z-index: 1;
-    }
-    .btn-fizzy:hover { color: #020617; background: var(--primary); }
-    .btn-fizzy .icon-arrow { transition: transform 0.3s ease; }
-    .btn-fizzy:hover .icon-arrow { transform: translateX(5px); }
-    .btn-fizzy::before, .btn-fizzy::after {
-      content: ""; position: absolute; width: 10px; height: 10px; background: var(--primary);
-      border-radius: 50%; opacity: 0; z-index: -1;
-    }
-    .btn-fizzy:hover::before { animation: fizzy-top 0.6s forwards; top: 50%; left: 20%; }
-    .btn-fizzy:hover::after { animation: fizzy-bottom 0.6s forwards; bottom: 50%; right: 20%; }
-
-    @keyframes fizzy-top {
-      0% { transform: translate(0, 0) scale(1); opacity: 1; }
-      100% { transform: translate(-30px, -50px) scale(0); opacity: 0; }
-    }
-    @keyframes fizzy-bottom {
-      0% { transform: translate(0, 0) scale(1); opacity: 1; }
-      100% { transform: translate(30px, 50px) scale(0); opacity: 0; }
-    }
-
-    section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-    h2 { font-size: 2rem; margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; font-weight: 800; }
-    h2::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, var(--glass-border), transparent); }
-
-    .stack { display: flex; flex-direction: column; gap: 3rem; }
-    .card {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-      background: var(--glass);
-      padding: 2.5rem;
-      border-radius: 28px;
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-    }
-
-    .badge { padding: 6px 14px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; display: inline-block; letter-spacing: 1px; }
-    .badge-blue { background: rgba(56, 189, 248, 0.1); color: var(--primary); border: 1px solid rgba(56, 189, 248, 0.2); }
-    .badge-gray { background: rgba(148, 163, 184, 0.1); color: var(--muted); border: 1px solid rgba(148, 163, 184, 0.2); }
-    .badge-green { background: rgba(34, 197, 94, 0.1); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.2); }
-    .badge-purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.2); }
-
-    .card-info h3 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; font-weight: 800; }
-    .card-info .subtitle { display: block; font-size: 0.85rem; color: var(--primary); margin-bottom: 1.2rem; font-family: 'JetBrains Mono', monospace; }
-    .card-info p { margin-bottom: 1.2rem; color: var(--muted); font-size: 0.95rem; }
-    
-    .list { list-style: none; margin-bottom: 1.5rem; }
-    .list li { margin-bottom: 0.5rem; font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px; color: var(--text); }
-    .list li::before { content: "→"; color: var(--primary); font-weight: bold; }
-
-    .card-visual { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 16px; border: 1px solid var(--glass-border); }
-    .card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-    .card:hover .card-visual img { transform: scale(1.05); }
-
-    .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-    .box { padding: 2rem; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; backdrop-filter: blur(12px); transition: var(--transition); }
-    .box:hover { border-color: var(--primary); transform: translateY(-5px); }
-    .box h4 { color: var(--primary); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1rem; }
-
-    @media (max-width: 968px) {
-      .card { grid-template-columns: 1fr; padding: 2rem; }
-      .card-visual { order: -1; }
-    }
-    
-    .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-    footer { text-align: center; padding: 4rem 2rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--glass-border); margin-top: 4rem; }
-  </style>
-</head>
+  <meta property="og:title" content="Douglas Henrique | Portfólio">
+  <meta property="og:description" content="Desenvolvedor .NET especializado em soluções escaláveis e arquitetura de sistemas.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/imgs/preview.png"> </head>
 <body>
   <div class="bg-blur"></div>
 
   <header>
-    <div class="hero">
-      <h1><span>Desenvolvedor Backend</span>Douglas Henrique</h1>
-      <p>Focado no ecossistema .NET, com experiência em sistemas de produção, integrações de hardware e otimização de fluxos de negócio.</p>
-      <div class="btn-group">
-        <a href="https://github.com/henriquedgs76" target="_blank" class="btn btn-secondary">💻 GitHub</a>
-        <a href="https://linkedin.com/in/douglashenrique76" target="_blank" class="btn btn-secondary">🔗 LinkedIn</a>
-        <a href="curriculo2026.pdf" download="Curriculo_Douglas_Henrique.pdf" class="btn btn-fizzy">
-          📥 Baixar CV <span class="icon-arrow">→</span>
-        </a>
-      </div>
+  <div class="hero">
+    <h1 class="reveal-top">
+  <span>Olá, eu sou</span> <div class="typing-container">
+    <span id="typing-text"></span><span class="cursor"></span>
+  </div>
+</h1>
+    <p class="reveal-bottom">Especialista em ecossistema .NET Core, integrando arquiteturas backend robustas com interfaces modernas e performáticas.</p>
+    <div class="btn-group reveal-bottom">
+      <a href="https://github.com/henriquedgs76" target="_blank" class="btn btn-secondary">
+  <i class="fa-brands fa-github"></i> GitHub
+</a>
+<a href="https://linkedin.com/in/douglashenrique76" target="_blank" class="btn btn-secondary">
+  <i class="fa-brands fa-linkedin"></i> LinkedIn
+</a>
+      <a href="/docs/curriculo2026.pdf" target="_blank" class="btn btn-fizzy">
+  <i class="fa-solid fa-file-pdf"></i> Baixar Currículo
+</a>
     </div>
-  </header>
+  </div>
+</header>
 
   <section id="experiencia">
     <h2>Experiência Profissional</h2>
@@ -167,8 +62,8 @@
         <div class="card-info">
           <span class="badge badge-blue">Produção Ativa</span>
           <h3>Carmob</h3>
-          <span class="subtitle">Desenvolvedor Backend Júnior | Nov 2025 – Presente</span>
-          <p>Manutenção e evolução de APIs robustas utilizando ASP.NET Core e C#.</p>
+<span class="subtitle">Desenvolvedor FullStack Júnior | Nov 2025 – Atual</span>          
+<p>Manutenção e evolução de APIs robustas utilizando ASP.NET Core e C#.</p>
           <ul class="list">
             <li>Manutenção de endpoints críticos e correção de bugs em produção.</li>
             <li>Otimização de consultas SQL para alta performance de resposta.</li>
@@ -176,7 +71,7 @@
           </ul>
         </div>
         <div class="card-visual">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="Backend Dev">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800" alt="FullStack Dev">
         </div>
       </div>
 
@@ -204,31 +99,37 @@
     <div class="stack">
       <div class="card">
         <div class="card-visual">
-          <img src="imgs/dashboard.png" alt="Estacionamento Dashboard">
+          <img src="/assets/imgs/dashboard.png" alt="Estacionamento Dashboard">
         </div>
         <div class="card-info">
           <span class="badge badge-green">Produto Comercial</span>
           <h3>Estacionamento & Lava Rápido</h3>
-          <span class="subtitle">C# | SQL Server | ASP.NET Core</span>
-          <p>Software de gestão comercial completo, controlando o fluxo financeiro e operacional de ponta a ponta.</p>
+<span class="subtitle">
+  <i class="fa-solid fa-code"></i> C# | 
+  <i class="fa-solid fa-database"></i> SQL Server | 
+  <i class="fa-solid fa-globe"></i> ASP.NET Core
+</span>          <p>Software de gestão comercial completo, controlando o fluxo financeiro e operacional de ponta a ponta.</p>
           <ul class="list">
             <li>Controle de caixa e tarifação dinâmica automatizada.</li>
             <li>Geração de relatórios financeiros detalhados.</li>
             <li>Sistema validado e em uso diário por clientes reais.</li>
           </ul>
-          <a href="http://henriquedgs76-001-site1.jtempurl.com/" target="_blank" class="btn btn-secondary">Acessar Demo</a>
+          <a href="http://henriquedgs76-001-site1.jtempurl.com/" target="_blank" class="btn btn-secondary">Acessar Sistema</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-visual">
-          <img src="imgs/hikvision-suite.png" alt="Hikvision Suite">
+          <img src="/assets/imgs/hikvision-suite.png" alt="Hikvision Suite">
         </div>
         <div class="card-info">
           <span class="badge badge-blue">Integração de Hardware</span>
           <h3>Hikvision ANPR Suite</h3>
-          <span class="subtitle">.NET 8 | SignalR | ISAPI</span>
-          <p>Integração Backend com dispositivos de leitura de placa, processando eventos em tempo real.</p>
+<span class="subtitle">
+  <i class="fa-solid fa-gears"></i> .NET 8 | 
+  <i class="fa-solid fa-bolt"></i> SignalR | 
+  <i class="fa-solid fa-microchip"></i> ISAPI
+</span>          <p>Integração Backend com dispositivos de leitura de placa, processando eventos em tempo real.</p>
           <ul class="list">
             <li>Comunicação via Webhooks e protocolo ISAPI.</li>
             <li>Notificações instantâneas utilizando SignalR.</li>
@@ -245,8 +146,11 @@
         <div class="card-info">
           <span class="badge badge-purple">Web Institucional</span>
           <h3>Barbearia Vila Lemos</h3>
-          <span class="subtitle">HTML5 | CSS3 | JavaScript</span>
-          <p>Interface focada em conversão de agendamentos e experiência mobile-first.</p>
+<span class="subtitle">
+  <i class="fa-brands fa-html5"></i> HTML5 | 
+  <i class="fa-brands fa-css3-alt"></i> CSS3 | 
+  <i class="fa-brands fa-js"></i> JavaScript
+</span>          <p>Interface focada em conversão de agendamentos e experiência mobile-first.</p>
           <ul class="list">
             <li>Design responsivo e clean voltado ao usuário.</li>
             <li>Integração com API do WhatsApp para agendamentos rápidos.</li>
@@ -256,58 +160,142 @@
         </div>
       </div>
     </div>
+
+      <div class="card">
+        <div class="card-visual">
+          <img src="/assets/imgs/logo-viva3.png" alt="Igreja Batista Viva">
+        </div>
+        <div class="card-info">
+          <span class="badge badge-purple">Web Institucional</span>
+          <h3>Igreja Batista Viva</h3>
+<span class="subtitle">
+  <i class="fa-brands fa-html5"></i> HTML5 | 
+  <i class="fa-brands fa-css3-alt"></i> CSS3 | 
+  <i class="fa-brands fa-js"></i> JavaScript
+</span>          <p>Website institucional de alto padrão focado em conexão comunitária e acessibilidade de informações.</p>
+          <ul class="list">
+            <li>Design Premium com técnicas de Storytelling Visual.</li>
+            <li>Efeitos de animação fluída com ScrollReveal.js.</li>
+            <li>Otimização de conversão via canais de atendimento integrados.</li>
+          </ul>
+          <a href="contato.html" target="_blank" class="btn btn-secondary">Ver Projeto</a>
+        </div>
+      </div>
+
   </section>
+
+  <section id="tecnologias">
+  <h2>Minha Stack</h2>
+  <div class="grid-info" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+    
+    <div class="box">
+      <i class="fa-solid fa-code" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">C#</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">Lógica & Backend</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-brands fa-microsoft" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">.NET 8</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">Web APIs & Desktop</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-solid fa-database" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">SQL Server</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">Banco de Dados</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-solid fa-layer-group" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">Entity Framework</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">ORM & Data</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-brands fa-js" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">JavaScript</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">Interatividade</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-solid fa-laptop-code" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+      <h4 style="margin-bottom: 5px;">HTML/CSS</h4>
+      <p style="font-size: 0.8rem; color: var(--muted);">Landing Pages</p>
+    </div>
+
+  </div>
+</section>
 
   <section id="sobre">
-    <div class="grid-info">
-      <div class="box">
-        <h4>Acadêmico</h4>
-        <p><strong>ADS — Em Graduação</strong><br>Anhanguera Campinas<br>Formatura: Julho/2026</p>
-      </div>
-      <div class="box">
-        <h4>Soft Skills</h4>
-        <p>8 anos de bagagem em gestão e atendimento, garantindo maturidade profissional e foco em prazos.</p>
-      </div>
-      <div class="box">
-        <h4>Stack Principal</h4>
-        <p>C#, .NET Core, SQL Server, MySQL, EF Core e Integrações REST.</p>
-      </div>
+  <h2>Sobre Mim</h2>
+  <div class="grid-info">
+    <div class="box">
+      <i class="fa-solid fa-graduation-cap" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+      <h4>Formação</h4>
+      <p><strong>Análise e Desenv. de Sistemas</strong><br>Anhanguera Campinas<br>Conclusão: Julho/2026</p>
     </div>
-  </section>
+
+    <div class="box">
+      <i class="fa-solid fa-briefcase" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+      <h4>Experiência & Gestão</h4>
+      <p>8 anos atuando com gestão e atendimento. Trago maturidade profissional, resiliência e foco total em entregas e prazos.</p>
+    </div>
+
+    <div class="box">
+      <i class="fa-solid fa-target-dot" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+      <h4>Foco Atual</h4>
+      <p>Desenvolvimento de ecossistemas robustos com .NET, integração de hardware e criação de APIs escaláveis.</p>
+    </div>
+  </div>
+</section>
 
   <section id="contato">
-    <h2>Contato</h2>
-    <div class="card" style="display: block; text-align: center;">
-      <div style="max-width: 600px; margin: 0 auto;">
-        <form action="https://formspree.io/f/xwvojoya" method="POST" class="contact-form">
-          <input type="text" name="_gotcha" style="display:none">
-          <input type="text" name="name" placeholder="Seu Nome" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
-          <input type="email" name="email" placeholder="Seu E-mail" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text);">
-          <textarea name="message" rows="4" placeholder="Como posso ajudar?" required style="width: 100%; padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 12px; color: var(--text); resize: vertical;"></textarea>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensagem</button>
-        </form>
-
-        <div style="margin: 2rem 0; opacity: 0.5; display: flex; align-items: center; gap: 15px;">
-          <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
-          <span style="font-size: 0.8rem; font-family: 'JetBrains Mono';">OU</span>
-          <hr style="flex: 1; border: 0; border-top: 1px solid var(--muted);">
+  <h2>Contato</h2>
+  <div class="card contact-card">
+    <div class="contact-wrapper">
+      <form action="https://formspree.io/f/xwvojoya" method="POST" class="contact-form">
+        <input type="text" name="_gotcha" style="display:none">
+        <div class="input-group">
+          <input type="text" name="name" placeholder="Seu Nome" required>
         </div>
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Seu E-mail" required>
+        </div>
+        <div class="input-group">
+          <textarea name="message" rows="4" placeholder="Como posso ajudar?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">
+          <i class="fa-solid fa-envelope"></i> Enviar E-Mail
+        </button>
+      </form>
 
-        <a href="https://wa.me/5519992896532" target="_blank" class="btn btn-secondary" style="width: 100%; border-color: #25d36644;">
-          <span style="color: #22c55e;">📞</span> Chamar no WhatsApp
-        </a>
+      <div class="divider">
+        <hr><span>OU</span><hr>
       </div>
+
+      <a href="https://wa.me/5519992896532" target="_blank" class="btn btn-secondary whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+      </a>
     </div>
-  </section>
+  </div>
+</section>
 
    <footer>
+  <div class="reveal-footer">
+    <p>DOUGLAS HENRIQUE — FULLSTACK DEVELOPER — 2026</p>
+    <p style="margin-top: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; opacity: 0.5;">
+      Foco em Resolução de Problemas e Entrega de Valor
+    </p>
+  </div>
+</footer>
 
-    <p>DOUGLAS HENRIQUE — CAMPINAS/SP</p>
+<script src="https://unpkg.com/scrollreveal"></script>
+  
+    
 
-    <p style="margin-top: 15px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; opacity: 0.5;">Foco em Resolução de Problemas e Entrega de Valor</p>
 
-  </footer>
-
+  
+  <script src="js/script.js" defer></script>
 </body>
-
 </html>
